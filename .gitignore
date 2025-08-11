@@ -1,0 +1,3 @@
+# ignore artifacts
+__pycache__/
+simLogs/
