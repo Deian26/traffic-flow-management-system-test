@@ -44,3 +44,22 @@ def GetRoadVehicleCount(laneCounters:dict) -> dict:
             roadVehicleCounters.update({road : laneCounters[lane]}) # store the current number of vehicles (the entry is created now)
     
     return roadVehicleCounters
+
+
+def GetWaitingVehiclesCount(waitingLaneVehicles:dict) -> int:
+    """
+    Returns the total number of waiting vehicles form the lanes provided.
+    'waitingLaneVehicles' must be a valid dictionary returned by 'get_lane_waiting_vehicle_count()' from CityFlow
+    
+    :param waitingLaneVehicles: the simulated lanes and the vehicle count for each of them
+    :type waitingLaneVehicles: dict[str, int]
+
+    :returns: the total number of waiting vehicles
+    :rtype: int
+    """
+
+    waitingVehicles = 0
+    for lane in waitingLaneVehicles.keys():
+        waitingVehicles += waitingLaneVehicles[lane]
+
+    return waitingVehicles

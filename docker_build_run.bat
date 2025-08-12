@@ -3,8 +3,8 @@ SET "CONTAINER=dt_container"
 SET "LOGSDIR=%CD%/simLogs"
 
 :: delete old logs
-rmdir "%LOGSDIR%"
-mkdir "%LOGSDIR%"
+rmdir /s /q "%LOGSDIR%"
+mkdir /q "%LOGSDIR%"
 
 :: build container image
 docker buildx build --tag "%IMAGE%" -f "%CD%/dockerfile" .

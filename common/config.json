@@ -3,10 +3,10 @@
 	"seed": 0,
 	"dir": "_tfms/",
 	"roadnetFile": "common/roadnet.json", 
-	"flowFile": "common/flow.json", 
+	"flowFile": "common/flow_highFlowMainStreet.json", 
 	"rlTrafficLight": true,
-	"laneChange": false,
+	"laneChange": true,
 	"saveReplay": true,
 	"roadnetLogFile": "logs/roadnetLog.json", 
-	"replayLogFile": "logs/proposed_solution_replay_log.txt"
+	"replayLogFile": "logs/replay_log.txt"
 }
