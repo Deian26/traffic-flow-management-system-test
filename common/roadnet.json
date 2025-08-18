@@ -40,6 +40,62 @@
                         }
                     ]
                 },
+                {
+                    "type": "turn_right",
+                    "startRoad": "sideStreet_in",
+                    "endRoad": "mainStreet_EW_out",
+                    "laneLinks":[
+                        {
+                            "startLaneIndex": 0,
+                            "endLaneIndex": 1,
+                            "points":[
+                                {
+                                    "x": -2.5,
+                                    "y": 10
+                                },
+                                {
+                                    "x": -5,
+                                    "y": 8.75
+                                },
+                                {
+                                    "x": -10,
+                                    "y": 7.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "turn_left",
+                    "startRoad": "sideStreet_in",
+                    "endRoad": "mainStreet_WE_out",
+                    "laneLinks":[
+                        {
+                            "startLaneIndex": 0,
+                            "endLaneIndex": 1,
+                            "points":[
+                                {
+                                    "x": -2.5,
+                                    "y": 10
+                                },
+                                {
+                                    "x": -2.5,
+                                    "y": -2
+                                },
+                                {
+                                    "x": -2.5,
+                                    "y": -3.75
+                                },
+                                {
+                                    "x": 10,
+                                    "y": -7.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+
 
                 {
                     "type": "go_straight",
@@ -125,15 +181,16 @@
                 {
                     "time": 15,
                     "availableRoadLinks": [
-                        0
+                        0,
+                        1
                         ]
                 },
 
                 {
                     "time": 60,
                     "availableRoadLinks": [
-                        1,
-                        2
+                        2,
+                        3
                         ]
                 }
 
