@@ -83,7 +83,7 @@ wd = "_tfms" # working directory (root)
 logsDir = os.path.join(wd, "logs") # logs directory
 os.makedirs(logsDir, exist_ok=True) # create the logs directory
 NO_VEHICLE_TIMEOUT_S = 5 * 60 # the maximum duration, in simulated seconds, for which the program waits for new vehicles to enter the road network; if no vehicles are detected on any road for this time interval, the simulation is stopped
-MAX_SIM_STEPS = 50 #1 * 36_000 # maximum number of simulation steps; 1 step = 0.1 s
+MAX_SIM_STEPS = 1 * 36_000 # maximum number of simulation steps; 1 step = 0.1 s
 SIM_THREAD_NUM = 1
 crt_file_path = os.path.dirname(__file__)
 configuration_file_path = f"{crt_file_path}/config.json"

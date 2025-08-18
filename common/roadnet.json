@@ -72,7 +72,7 @@
                     "laneLinks":[
                         {
                             "startLaneIndex": 0,
-                            "endLaneIndex": 1,
+                            "endLaneIndex": 0,
                             "points":[
                                 {
                                     "x": -2.5,
@@ -80,15 +80,15 @@
                                 },
                                 {
                                     "x": -2.5,
-                                    "y": -2
+                                    "y": 0
                                 },
                                 {
-                                    "x": -2.5,
-                                    "y": -3.75
+                                    "x": 0,
+                                    "y": -1.75
                                 },
                                 {
                                     "x": 10,
-                                    "y": -7.5
+                                    "y": -2.5
                                 }
                             ]
                         }
@@ -182,15 +182,16 @@
                     "time": 15,
                     "availableRoadLinks": [
                         0,
-                        1
+                        1,
+                        2
                         ]
                 },
 
                 {
                     "time": 60,
                     "availableRoadLinks": [
-                        2,
-                        3
+                        3,
+                        4
                         ]
                 }
 
