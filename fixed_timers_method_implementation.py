@@ -7,7 +7,7 @@ from common.functions import *
 # configure simulation
 print("    > FIXED TIMERS METHOD")
 print("    > Creating CityFlow simulation engine...")
-engine = cityflow.Engine(configuration_file_path, thread_num = SIM_THREAD_NUM)
+engine = cityflow.Engine(f"{crt_file_path}/config_fixedTimers.json", thread_num = SIM_THREAD_NUM)
 
 # set fixed timers
 trafficLightTimers.update({
@@ -19,9 +19,9 @@ maxNumberOfWaitingVehicles = 0
 numberOfWaitingVehicles = 0
 numberOfStatisticSamples = 0
 
-def getYellowLightStatistics():
+def getSimStepStatistics():
     """
-    Calculates and stores traffic statistics
+    Calculates and stores traffic statistics for a simulation step.
     """
 
     global numberOfWaitingVehicles
@@ -52,29 +52,15 @@ with open(os.path.join(logsDir,"fixed_timers_method_log.txt"),"w") as logFile: #
 
     # initialize the traffic lights with a default configuration (scenario-specific):
     # initially, the side street traffic light will always be RED and the main street traffic lights will always be GREEN
-    lastVehicleDetectedTimestamp = engine.get_current_time() # initialize timestamp for simulation stop timeout
     engine.set_tl_phase(intersection_id = INTERSECTION,
                         phase_id = TL_MAINSTREET_GREEN) # index from the 'lightPhases' of the intersection
 
-    engine.next_step() # simulate a step
 
 
     #---# SIMULATION #---#
     crtSimStep = 1
     while True and crtSimStep <= MAX_SIM_STEPS:
         print(f"{engine.get_current_time()} > #-# START OF ABSOLUTE CYCLE {absoluteTrafficCycleCounter} #-#", file=logFile)
-        
-        # skip until vehicles are detected on any road
-        if engine.get_vehicle_count() == 0:
-            engine.next_step(); crtSimStep+=1
-
-            # check if the simulation should be stopped
-            if engine.get_current_time() - lastVehicleDetectedTimestamp > NO_VEHICLE_TIMEOUT_S: # stop simulation
-                print(f"{engine.get_current_time()} > Timeout reached before vehicles were detected on the road ({NO_VEHICLE_TIMEOUT_S} seconds)!", file = logFile)
-                break
-            
-            continue
-        lastVehicleDetectedTimestamp = engine.get_current_time() # mark the timestamp when vehicles were detected on any road
 
         ## Simulate the traffic cycle
         for trafficLightGroup in trafficLightTimers.keys():
@@ -85,8 +71,7 @@ with open(os.path.join(logsDir,"fixed_timers_method_log.txt"),"w") as logFile: #
             # simulate traffic furing the yellow lights phase
             t0 = engine.get_current_time()
             while engine.get_current_time() - t0 <= CONST_YELLOW_TIMER_S:
-                getYellowLightStatistics()
-                engine.next_step(); crtSimStep+=1
+                engine.next_step(); crtSimStep+=1; getSimStepStatistics()
 
             # set the green timer to be the same for all traffic lights in the group
             engine.set_tl_phase(intersection_id = INTERSECTION, 
@@ -95,7 +80,7 @@ with open(os.path.join(logsDir,"fixed_timers_method_log.txt"),"w") as logFile: #
             # simulate traffic cycle segment
             t0 = engine.get_current_time()
             while engine.get_current_time() - t0 <= trafficLightTimers[trafficLightGroup][0]:
-                engine.next_step(); crtSimStep+=1
+                engine.next_step(); crtSimStep+=1; getSimStepStatistics()
 
         print("#-# END OF CYCLE #-#\n", file=logFile)
 
@@ -109,6 +94,7 @@ with open(os.path.join(logsDir,"fixed_timers_method_log.txt"),"w") as logFile: #
     print(f"Average travel time: {engine.get_average_travel_time()} seconds", file=logFile)
     
     if numberOfStatisticSamples > 0:
-        print(f"Average number of waiting vehicles during the yellow lights phase: {(numberOfWaitingVehicles / numberOfStatisticSamples)}", file=logFile)
+        print(f"Average number of waiting vehicles / step: {(numberOfWaitingVehicles / numberOfStatisticSamples)}", file=logFile)
     
-    print(f"Maximum number of waiting vehicles during a yellow light phase: {maxNumberOfWaitingVehicles}", file=logFile)
+    print(f"Maximum number of waiting vehicles / step: {maxNumberOfWaitingVehicles}", file=logFile)
+    print()

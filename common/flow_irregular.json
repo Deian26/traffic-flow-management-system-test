@@ -15,7 +15,7 @@
       "sideStreet_in",
       "sideStreet_out"
     ],
-    "interval": 45.0,
+    "interval": 75.0,
     "startTime": 1,
     "endTime": -1
   },
@@ -35,7 +35,7 @@
       "sideStreet_in",
       "mainStreet_WE_out"
     ],
-    "interval": 60.0,
+    "interval": 100.0,
     "startTime": 1,
     "endTime": -1
   },
@@ -56,7 +56,7 @@
       "sideStreet_in",
       "mainStreet_EW_out"
     ],
-    "interval": 35.0,
+    "interval": 120.0,
     "startTime": 1,
     "endTime": -1
   },
@@ -102,7 +102,7 @@
       "mainStreet_WE_in",
       "mainStreet_WE_out"
     ],
-    "interval": 5.0,
+    "interval": 20.0,
     "startTime": 1,
     "endTime": -1
   },
@@ -122,6 +122,28 @@
       "mainStreet_WE_in",
       "mainStreet_WE_out"
     ],
+    "interval": 30.0,
+    "startTime": 1,
+    "endTime": -1
+  },
+
+
+  {
+    "vehicle": {
+      "length": 5.0,
+      "width": 2.0,
+      "maxPosAcc": 2.0,
+      "maxNegAcc": 4.5,
+      "usualPosAcc": 2.0,
+      "usualNegAcc": 4.5,
+      "minGap": 2.5,
+      "maxSpeed": 13.88,
+      "headwayTime": 1.5
+    },
+    "route": [
+      "mainStreet_EW_in",
+      "mainStreet_EW_out"
+    ],
     "interval": 10.0,
     "startTime": 1,
     "endTime": -1
@@ -135,28 +157,6 @@
       "usualPosAcc": 2.0,
       "usualNegAcc": 4.5,
       "minGap": 2.5,
-      "maxSpeed": 14.0,
-      "headwayTime": 1.5
-    },
-    "route": [
-      "mainStreet_WE_in",
-      "mainStreet_WE_out"
-    ],
-    "interval": 25.0,
-    "startTime": 1,
-    "endTime": -1
-  },
-
-
-  {
-    "vehicle": {
-      "length": 5.0,
-      "width": 2.0,
-      "maxPosAcc": 2.0,
-      "maxNegAcc": 4.5,
-      "usualPosAcc": 2.0,
-      "usualNegAcc": 4.5,
-      "minGap": 2.5,
       "maxSpeed": 13.88,
       "headwayTime": 1.5
     },
@@ -164,47 +164,7 @@
       "mainStreet_EW_in",
       "mainStreet_EW_out"
     ],
-    "interval": 5.0,
-    "startTime": 1,
-    "endTime": -1
-  },
-  {
-    "vehicle": {
-      "length": 5.0,
-      "width": 2.0,
-      "maxPosAcc": 2.0,
-      "maxNegAcc": 4.5,
-      "usualPosAcc": 2.0,
-      "usualNegAcc": 4.5,
-      "minGap": 2.5,
-      "maxSpeed": 13.88,
-      "headwayTime": 1.5
-    },
-    "route": [
-      "mainStreet_EW_in",
-      "mainStreet_EW_out"
-    ],
-    "interval": 7.5,
-    "startTime": 1,
-    "endTime": -1
-  },
-  {
-    "vehicle": {
-      "length": 5.0,
-      "width": 2.0,
-      "maxPosAcc": 2.0,
-      "maxNegAcc": 4.5,
-      "usualPosAcc": 2.0,
-      "usualNegAcc": 4.5,
-      "minGap": 2.5,
-      "maxSpeed": 12.0,
-      "headwayTime": 1.5
-    },
-    "route": [
-      "mainStreet_EW_in",
-      "mainStreet_EW_out"
-    ],
-    "interval": 13.5,
+    "interval": 12.5,
     "startTime": 1,
     "endTime": -1
   }

@@ -1,0 +1,12 @@
+{
+	"interval": 0.1,
+	"seed": 0,
+	"dir": "_tfms/",
+	"roadnetFile": "common/roadnet.json", 
+	"flowFile": "common/flow_irregular.json", 
+	"rlTrafficLight": true,
+	"laneChange": true,
+	"saveReplay": true,
+	"roadnetLogFile": "logs/proposedMethod_roadnetLog.json", 
+	"replayLogFile": "logs/proposedMethod_replay_log.txt"
+}

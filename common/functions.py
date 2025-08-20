@@ -45,7 +45,6 @@ def GetRoadVehicleCount(laneCounters:dict) -> dict:
     
     return roadVehicleCounters
 
-
 def GetWaitingVehiclesCount(waitingLaneVehicles:dict) -> int:
     """
     Returns the total number of waiting vehicles form the lanes provided.

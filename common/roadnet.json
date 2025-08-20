@@ -204,7 +204,7 @@
             "id" : "intersection_peripheral_north",
             "point" : {
                 "x": 0,
-                "y": 100
+                "y": 200
             },
             "roads": [
                 "sideStreet_in"
@@ -260,7 +260,7 @@
             "points": [
                 {
                     "x": 0,
-                    "y": 100
+                    "y": 200
                 },
                 {
                     "x": 0,

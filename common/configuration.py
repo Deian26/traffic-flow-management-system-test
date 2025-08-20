@@ -13,7 +13,7 @@ CONST_YELLOW_TIMER_S = 3 # value used as in paper [5], for better comparison # a
 # constant lengths (meters)
 CONST_VEHICLE_LENGTH_M = 5 # the length of a vehicle, in meters (constant for computing the traffic coefficient; this is the actual length of the simulated vehicles)
 CONST_BUFFER_LENGTH_M = 2.5 # the length of a buffer between 2 queued vehicles (constant for computing the traffic coefficient)
-CONST_ROAD_SEGMENT_LENGTH_M = 100 # the length of the observed segment of road, leading to the intersection
+CONST_ROAD_SEGMENT_LENGTH_M = 200 # the length of the observed segment of road, leading to the intersection
 
 # intersection names
 INTERSECTION = "intersection"
@@ -86,6 +86,5 @@ NO_VEHICLE_TIMEOUT_S = 5 * 60 # the maximum duration, in simulated seconds, for 
 MAX_SIM_STEPS = 1 * 36_000 # maximum number of simulation steps; 1 step = 0.1 s
 SIM_THREAD_NUM = 1
 crt_file_path = os.path.dirname(__file__)
-configuration_file_path = f"{crt_file_path}/config.json"
 flow_file_path = f"{crt_file_path}/flow.json"
 roadnet_file_path = f"{crt_file_path}/roadnet.json"
